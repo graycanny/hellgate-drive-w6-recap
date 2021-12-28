@@ -1,12 +1,14 @@
 import express from "express";
+import { getAllUsers } from "../models/users.js";
 const router = express.Router();
+const app = express();
 
 /*-- EVENT HANDLERS --*/
 
 /*-- GET ALL TEAMS --*/
 
-router.get("/teams", (res, req) => {
-  const data = getTopTeams();
+router.get("/users", (res, req) => {
+  const data = getAllUsers();
   res.json({ message: `The top five teams!`, payload: data });
 });
 
